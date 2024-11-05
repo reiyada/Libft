@@ -6,7 +6,7 @@
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:02:15 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/05 13:39:51 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/05 16:00:50 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int ft_isdigit(int c);
 void *ft_memcpy(void *dest, const void *src, size_t n);
 void *ft_memmove(void *dest, const void *src, size_t n);
 void *ft_memset(void *ptr, int value, size_t num);
-int ft_strlen(char *str);
-
+size_t ft_strlen(const char *str);
+size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
 
 #endif

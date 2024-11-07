@@ -1,52 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 14:11:51 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/07 14:48:56 by ryada            ###   ########.fr       */
+/*   Created: 2024/11/07 09:34:44 by ryada             #+#    #+#             */
+/*   Updated: 2024/11/07 13:05:42 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_atoi(const char *str)
 {
-	char	*result;
-	size_t	len;
-	size_t	i;
-	size_t	j;
+	unsigned long int	result;
+	int					i;
+	int					sign;
 
-	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	result = (char *)malloc(len * sizeof(char));
-	if (!result)
-		return (NULL);
+	result = 0;
 	i = 0;
-	while (s1[i] != '\0')
+	sign = 1;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
 	{
-		result[i] = s1[i];
+		sign = -sign;
 		i++;
 	}
-	j = 0;
-	while (s2[j] != '\0')
-	{
-		result[i] = s2[j];
+	else if (str[i] == '+')
 		i++;
-		j++;
+	while (ft_isdigit(str[i]))
+	{
+		result *= 10;
+		result += str[i] - '0';
+		i++;
 	}
-	result[i] = '\0';
-	return (result);
+	return (result * sign);
 }
 
 // int main(int argc, char **argv)
 // {
-// 	if (argc == 3)
+// 	int digit;
+// 	if(argc == 2)
 // 	{
-// 		char *join = ft_strjoin(argv[1], argv[2]);
-// 		printf("%s + %s = %s\n", argv[1], argv[2], join);
-// 		free(join);
+// 		digit = ft_atoi(argv[1]);
+// 		printf("The string %s is %d in digit.\n", argv[1], digit);
 // 	}
 // 	return (0);
 // }

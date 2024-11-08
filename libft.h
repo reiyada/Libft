@@ -6,7 +6,7 @@
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:02:15 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/07 16:41:07 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/08 14:19:51 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+static int	ft_intlen(int n);
+char	*ft_itoa(int n);
 
 
 #endif

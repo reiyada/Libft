@@ -6,7 +6,7 @@
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:24:46 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/05 15:27:24 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/08 10:53:04 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
 	size_t	i;
 
 	src_len = ft_strlen(src);
+	if (dest_size == 0)
+		return (src_len);
 	if (dest_size > 0)
 	{
 		i = 0;

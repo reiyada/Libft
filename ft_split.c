@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_test.c                                    :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rei <rei@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:11:49 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/08 11:54:50 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/11 11:56:35 by rei              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,24 +54,34 @@ char **ft_split(char const *s, char c)
 
     start = 0;
     i = 0;
-    result = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
-    if (!result)
+    if (!(result= (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *))))
         return (NULL);
-    while (s[start]!= '\0')
+    while (s[start])
     {
         while (s[start] == c)
             start++;
         if (s[start] == '\0')
             break;
         end = start;
-        while (s[end] != c && s[end] != '\0')
+        while (s[end] != c && s[end])
             end++;
-        result[i] = ft_substr(s, start, end - start);
-        if(!result[i])
+        if(!(result[i++]= ft_substr(s, start, end - start)))
             return (ft_freeAllAloc(result, i), NULL);
-        i++;
         start = end;
     }
-    result[i] = NULL;
-    return (result);
+    return (result[i] = NULL, result);
+}
+int main()
+{
+    char const str[] = "Hello I am Rei";
+    char sep = ' ';
+    char **result = ft_split(str, sep);
+    int i = 0;
+    while (result[i])
+    {
+        printf("%s\n", result[i]);
+        i++;
+    }
+    printf("\n");
+    return (0);
 }

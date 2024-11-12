@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/12 09:37:30 by ryada             #+#    #+#             */
+/*   Updated: 2024/11/12 09:37:43 by ryada            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    char *number;
+	char	*number;
 
-    number = ft_itoa(n);
-    if (number)
-    {
-        ft_putstr_fd(number, fd);
-        free(number);
-    }
+	number = ft_itoa(n);
+	if (number)
+	{
+		ft_putstr_fd(number, fd);
+		free(number);
+	}
 }
 
 // int main()

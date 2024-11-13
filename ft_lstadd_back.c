@@ -2,6 +2,8 @@
 
 void ft_lstadd_back(t_list **lst, t_list *new)
 {
+    if (!new)
+        return;
     t_list *last;
 
     last = ft_lstlast(*lst);

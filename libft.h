@@ -6,7 +6,7 @@
 /*   By: rei <rei@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:02:15 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/13 16:37:58 by rei              ###   ########.fr       */
+/*   Updated: 2024/11/13 17:48:58 by rei              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int ft_tolower(int c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 int	ft_atoi(const char *str);
+int ft_lstsize(t_list *lst);
 
 
 size_t ft_strlen(const char *str);
@@ -63,6 +64,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	**ft_split(char const *s, char c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));

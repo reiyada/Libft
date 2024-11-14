@@ -6,17 +6,17 @@
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 08:47:26 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/07 08:47:27 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/14 10:34:47 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 65 && c <= 90)
-        c += 32;
-    return (c);
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
 }
 
 // int main(int argc, char **argv)

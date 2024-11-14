@@ -1,15 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/14 09:20:30 by ryada             #+#    #+#             */
+/*   Updated: 2024/11/14 10:37:59 by ryada            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    if (!new)
-        return;
-    t_list *last;
+	t_list	*last;
 
-    last = ft_lstlast(*lst);
-    if (!last)
-        *lst = new;
-    last->next = new;
+	if (new == NULL)
+		return ;
+	last = ft_lstlast(*lst);
+	if (!last)
+		*lst = new;
+	else
+		last->next = new;
 }
 
 // t_list *ft_create_node(void *value)

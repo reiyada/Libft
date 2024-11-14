@@ -6,7 +6,7 @@
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:48:57 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/12 09:34:47 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/14 09:34:06 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i])
 	{
-		(*f)(i, s + 1);
+		(*f)(i, &s[i]);
 		i++;
 	}
 }

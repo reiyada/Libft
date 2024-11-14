@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/14 09:20:38 by ryada             #+#    #+#             */
+/*   Updated: 2024/11/14 10:39:36 by ryada            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    t_list *temp;
+	t_list	*temp;
 
-    if (!lst || !del)
-        return;
-    while (*lst)
-    {
-        temp = (*lst)->next; //store the next node
-        ft_lstdelone(*lst, del); //delete the current one
-        *lst = temp;//move to the next one
-    }
-    *lst = NULL;
+	if (!lst || !del)
+		return ;
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
+	}
+	*lst = NULL;
 }
 //lst->next points simply the next node
 //while (*lst)->next means the next node itself
@@ -39,7 +51,6 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 //     content[i] = '\0';
 //     return ft_lstnew(content);
 // }
-
 
 // int main(void)
 // {

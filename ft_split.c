@@ -6,7 +6,7 @@
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:11:49 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/12 09:32:38 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/14 14:58:01 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ void	ft_free_all_alloc(char **table, int size)
 	free(table);
 }
 
+size_t	ft_skip_sep(const char *s, char c, size_t index)
+{
+	while (s[index] == c)
+		index++;
+	return (index);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -60,17 +67,17 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (s[start])
 	{
-		while (s[start] == c)
-			start++;
+		start = ft_skip_sep(s, c, start);
 		if (s[start] == '\0')
 			break ;
 		end = start;
 		while (s[end] != c && s[end])
 			end++;
-		result[i++] = ft_substr(s, start, end - start);
-		if (result == NULL)
+		result[i] = ft_substr(s, start, end - start);
+		if (!result[i])
 			return (ft_free_all_alloc(result, i), NULL);
 		start = end;
+		i++;
 	}
 	return (result[i] = NULL, result);
 }

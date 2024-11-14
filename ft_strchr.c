@@ -6,7 +6,7 @@
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 08:47:07 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/14 10:31:12 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/14 14:25:05 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	unsigned char	target;
+	int				i;
 
+	target = (unsigned char)c;
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == (char)c)
+		if ((unsigned char)s[i] == target)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (c == '\0')
+	if (target == '\0')
 		return ((char *)&s[i]);
 	return (NULL);
 }

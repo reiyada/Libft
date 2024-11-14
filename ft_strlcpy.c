@@ -6,11 +6,11 @@
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:24:46 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/08 10:53:04 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/14 15:00:50 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
 {

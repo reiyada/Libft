@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rei <rei@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 13:34:45 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/13 18:19:28 by rei              ###   ########.fr       */
+/*   Updated: 2024/11/14 14:17:35 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static int	ft_intlen(int n)
 {
 	int	len;
 
-	len = 0;
-	if (n <= 0)
-		len = 1;
-	while (n != 0)
+	len = 1;
+	if (n < 0)
+		len++;
+	while (n / 10 != 0)
 	{
 		n /= 10;
 		len++;
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	str[len--] = '\0';
 	if (n == 0)
-		str[0] = '0';
+		return (str[0] = '0', str);
 	if (nb < 0)
 	{
 		str[0] = '-';
@@ -56,7 +56,7 @@ char	*ft_itoa(int n)
 
 // int main()
 // {
-//     int nb = -123;
+//     int nb = 0;
 //     char *number = ft_itoa(nb);
 //     printf("%s\n", number);
 //     free (number);

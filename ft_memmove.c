@@ -6,7 +6,7 @@
 /*   By: ryada <ryada@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:12:36 by ryada             #+#    #+#             */
-/*   Updated: 2024/11/05 14:23:48 by ryada            ###   ########.fr       */
+/*   Updated: 2024/11/14 12:08:02 by ryada            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*byte_dest;
 	const unsigned char	*byte_src;
 
+	if ((dest == NULL && src == NULL) || n < 0)
+		return (NULL);
 	byte_dest = (unsigned char *)dest;
 	byte_src = (const unsigned char *)src;
 	if (byte_dest > byte_src && byte_dest < byte_src + n)
